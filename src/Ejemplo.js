@@ -5,15 +5,19 @@ class Ejemplo extends React.Component{
         nombre: 'Marce',
         apellido: 'Lerma',
         edad: '32 años',
-        signo: 'acuario',
+        signo: 'Acuario',
         nacionalidad: 'mexicana'
     }
     render (){
         return (
-            <div> 
+            <div className='Propiedades'> 
+                <strong> <h2> Propiedades </h2> </strong>
                 <p> Este es el contenido</p>
                 <p>
-                    {this.state.nombre}  {this.state.apellido} <br/> {this.state.edad} <br/> {this.state.signo} <br/> {this.state.nacionalidad}
+                    Nombre: {this.state.nombre}  {this.state.apellido} <br/>
+                    Edad: {this.state.edad} <br/>
+                    Signo: {this.state.signo} <br/> 
+                    Nacionalidad: {this.state.nacionalidad}
                 </p>
             </div>
         )}

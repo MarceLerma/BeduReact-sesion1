@@ -9,10 +9,10 @@ import Fetch from './Fetch';
 import FetchPerritos from './FetchPerritos';
 import FetchDiezPerritos from './FetchDiezPerritos';
 import FetchCincoPerritos from './FetchCincoPerritos';
+import Eventos from './Eventos';
 import Paises from './Paises';
 import EncontrarPaises from './EncontrarPaises';
 import InfoPais from './InfoPais';
-import Eventos from './Eventos';
 import {BrowserRouter as Router, Switch,Route,Link} from "react-router-dom";
 import './App.css';
 
@@ -24,15 +24,48 @@ class App extends React.Component {
     return (
 
     <div className="App">
-      <Header2 />  
-         <Router>
-            <div>
+    <Router>
+      <Header/>
+        <ul className="Navegacion">
+          <ul className='NavLink'> <Link to='/componenetes' > Ejercicio 1. Componentes </Link> </ul>
+          <ul className='NavLink'> <Link to='/propiedades' > Ejercicio 2. Propiedades </Link> </ul>
+          <ul className='NavLink'> <Link to='/api'  > Ejercicio 3. API - perritos </Link> </ul>
+          <ul className='NavLink'> <Link to='/api2' > Ejercicio 3b. API - 5 perritos </Link> </ul>
+          <ul className='NavLink'> <Link to='/api3' > Ejercicio 3c. API - 10 perritos </Link> </ul>
+          <ul className='NavLink'> <Link to='/eventos'  > Ejercicio 4. Eventos - contador </Link> </ul>
+          <ul className='NavLink'> <Link to='/router' > Ejercicio 5. Router- países </Link> </ul>
+        </ul> 
+            <div>    
               <Switch>
-                <Route exact path="/:id" component={InfoPais} /> 
-                <Route exact path="/" component={EncontrarPaises} />
+                <Route exact  path="/componentes">
+                  <Main />
+                  <Sidebar />
+                </Route>
+                <Route exact  path="/propiedades">
+                  <Ejemplo />
+                </Route>
+                <Route exact path="/api">
+                  <Fetch  />
+                </Route>
+                <Route exact path="/api2">
+                  <FetchCincoPerritos  />
+                </Route>
+                <Route exact  path="/api3">
+                  <FetchDiezPerritos  />
+                </Route>
+                <Route exact path="/eventos">
+                  <Eventos />
+                </Route>               
+                <Route exact path="/router"> 
+                   <Header2 /> 
+                  <EncontrarPaises />
+                  {/* <InfoPais /> */}
+                </Route>
+               
               </Switch>
             </div>
-    </Router>
+           <Footer />
+        </Router>
     </div>
 
     );

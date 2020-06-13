@@ -18,15 +18,19 @@ export default class FetchCincoPerritos extends Component {
     render() {
         console.log(this.state.cincoPerritos)
         return (
-            <div>
-                {this.state.cincoPerritos.map((perrito)=>{
-                return(
-                    <img src={perrito}/>
-                )
-                }
-            
-            )}
-            </div>                
+            < >  
+                <p> <strong> Aqui la foto de los perritos </strong> </p> 
+                    {this.state.cincoPerritos.map((perrito)=>{
+                    return(
+                        <div>
+                            <img src={perrito}/>
+                        </div>
+                    )
+                    }
+                
+                )}
+
+            </>                
             
         )
     }

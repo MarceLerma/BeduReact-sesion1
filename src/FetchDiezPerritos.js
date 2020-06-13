@@ -24,6 +24,7 @@ class FetchDiezPerritos extends React.Component{
         console.log(this.state.diezPerritos)
         return(
             <>
+            <p> <strong> Aqui la foto de los perritos </strong> </p> 
             {this.state.diezPerritos.map((perrito)=>{
                 return(
                     <img src={perrito}/>

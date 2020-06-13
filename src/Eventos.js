@@ -9,7 +9,7 @@ export default class Eventos extends Component {
     }
     
     alertar(){
-        alert('Hola Mundo')
+        alert('Emplea el contador')
     };
 
     sumar(){
@@ -43,7 +43,7 @@ export default class Eventos extends Component {
     render() {
         return (
             <div>
-                <button onClick={(e)=>{this.alertar(e)}}> Alerta de saludo </button>
+                <button onClick={(e)=>{this.alertar(e)}}> Manejo Eventos </button>
                 <p> Contador </p>
                 <button onClick={(e)=>{this.sumar(e)}}> +1 </button> <br/>
                     <p>{this.state.cont}</p>

@@ -23,8 +23,10 @@
        render(){
            console.log(this.state)
            return(
-               <div>
-                  <img src={this.state.data.message}/>
+               <div className='Api'>
+                    <p> <strong> Aqui la foto del perrito </strong> </p>
+
+                    <img src={this.state.data.message}/>
                </div>
            )
        }

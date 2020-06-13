@@ -13,7 +13,7 @@ export default class InfoPais extends Component {
 
     componentDidMount(){
         console.log(this.props)
-        axios.get(`https://restcountries.eu/rest/v2/alpha/${this.props.match.params.id}`).then(
+        axios.get(`https://restcountries.eu/rest/v2/alpha/${this.props.match.params.nombredelpais}`).then(
             (response)=>{
                 console.log(response)
                 this.setState({
@@ -22,11 +22,6 @@ export default class InfoPais extends Component {
             }
         )
     }
-    mostrarPais(){
-         this.setState({Pais:this.state.Pais.data });
-    };
-    
-
 
     render() { 
         console.log(this.state.Pais)
