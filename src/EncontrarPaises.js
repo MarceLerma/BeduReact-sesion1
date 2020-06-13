@@ -9,9 +9,8 @@ export default class EncontrarPaises extends Component {
         Paises:[]
     } 
 
-    
-
     componentDidMount(){
+        
         axios.get('https://restcountries.eu/rest/v2/all').then(
             (response)=>{
                 console.log(response)
@@ -33,15 +32,12 @@ export default class EncontrarPaises extends Component {
                         return(
                             <div className='PaisLista' >
                                     <img src={pais.flag} className="paisBandera"/>
-                                    <Link to={`/${pais.alpha3Code}`}>{pais.name} </Link>
-                                    
+                                    <Link to={`/${pais.alpha3Code}`}>{pais.name} </Link>       
                             </div>
                             )
                         }
                     )}
                 </div>
-                <InfoPais/>
-
             </div>
         )
     }
