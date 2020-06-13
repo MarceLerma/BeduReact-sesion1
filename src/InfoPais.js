@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import EncontrarPaises from './EncontrarPaises'
 import './paises.sass'
 
 export default class InfoPais extends Component {
@@ -11,7 +12,8 @@ export default class InfoPais extends Component {
     
 
     componentDidMount(){
-        axios.get('https://restcountries.eu/rest/v2/alpha/col').then(
+        console.log(this.props)
+        axios.get(`https://restcountries.eu/rest/v2/alpha/${this.props.match.params.id}`).then(
             (response)=>{
                 console.log(response)
                 this.setState({
@@ -28,9 +30,9 @@ export default class InfoPais extends Component {
 
     render() { 
         console.log(this.state.Pais)
-         console.log(this.props)
+         console.log("this.props.match.params.id:", this.props.match.params.id)
         return (
-           
+           <>
                 <div className='detallePais'>
                    
                         <div>
@@ -45,7 +47,7 @@ export default class InfoPais extends Component {
                             <p>{this.state.Pais.area}</p>
                         </div>
                 </div>
-               
+            </>
         )
     }
 }
